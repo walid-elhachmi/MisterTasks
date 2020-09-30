@@ -29,3 +29,9 @@ public enum APIError: Error {
     case invalidResponse
     case decodeError
 }
+
+
+public enum CoreDataError: Error {
+    
+    case invalidManagedObjectType
+}

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		35E55B98252453C100A605BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55B97252453C100A605BE /* AppDelegate.swift */; };
 		35E55B9A252453C100A605BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55B99252453C100A605BE /* SceneDelegate.swift */; };
-		35E55B9C252453C100A605BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55B9B252453C100A605BE /* ViewController.swift */; };
 		35E55B9F252453C100A605BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E55B9D252453C100A605BE /* Main.storyboard */; };
 		35E55BA2252453C100A605BE /* MisterTasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BA0252453C100A605BE /* MisterTasks.xcdatamodeld */; };
 		35E55BA4252453C100A605BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E55BA3252453C100A605BE /* Assets.xcassets */; };
@@ -18,6 +17,17 @@
 		35E55BBD252453C100A605BE /* MisterTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BBC252453C100A605BE /* MisterTasksUITests.swift */; };
 		35E55BCC2524540300A605BE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BCB2524540300A605BE /* Config.swift */; };
 		35E55BCF252454AE00A605BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BCE252454AE00A605BE /* NetworkManager.swift */; };
+		35E55BD225245C3500A605BE /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BD125245C3500A605BE /* UsersViewController.swift */; };
+		35E55BD625245DF500A605BE /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BD425245DF500A605BE /* UserCollectionViewCell.swift */; };
+		35E55BD725245DF500A605BE /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E55BD525245DF500A605BE /* UserCollectionViewCell.xib */; };
+		35E55BE92524893900A605BE /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BE52524893900A605BE /* Tasks.swift */; };
+		35E55BEB2524893900A605BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BE72524893900A605BE /* User.swift */; };
+		35E55BFF25249A2200A605BE /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55BFE25249A2200A605BE /* UserListViewModel.swift */; };
+		35E55C0225249B4000A605BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C0125249B4000A605BE /* CoreDataManager.swift */; };
+		35E55C042524D17F00A605BE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C032524D17F00A605BE /* UserViewModel.swift */; };
+		35E55C092524F5B400A605BE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C082524F5B400A605BE /* Repository.swift */; };
+		35E55C0C2524FAC000A605BE /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C0B2524FAC000A605BE /* CoreDataRepository.swift */; };
+		35E55C1125250FFE00A605BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C1025250FFE00A605BE /* UserRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +51,6 @@
 		35E55B94252453C100A605BE /* MisterTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisterTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E55B97252453C100A605BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35E55B99252453C100A605BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35E55B9B252453C100A605BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35E55B9E252453C100A605BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35E55BA1252453C100A605BE /* MisterTasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MisterTasks.xcdatamodel; sourceTree = "<group>"; };
 		35E55BA3252453C100A605BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +64,17 @@
 		35E55BBE252453C100A605BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35E55BCB2524540300A605BE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		35E55BCE252454AE00A605BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		35E55BD125245C3500A605BE /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		35E55BD425245DF500A605BE /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		35E55BD525245DF500A605BE /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
+		35E55BE52524893900A605BE /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		35E55BE72524893900A605BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		35E55BFE25249A2200A605BE /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		35E55C0125249B4000A605BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		35E55C032524D17F00A605BE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		35E55C082524F5B400A605BE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		35E55C0B2524FAC000A605BE /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		35E55C1025250FFE00A605BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,15 +126,16 @@
 			isa = PBXGroup;
 			children = (
 				35E55BCA252453EF00A605BE /* Config */,
+				35E55C0A2524FAA100A605BE /* Repository */,
+				35E55C072524F54800A605BE /* Protocol */,
 				35E55BCD2524548E00A605BE /* Manager */,
-				35E55B97252453C100A605BE /* AppDelegate.swift */,
-				35E55B99252453C100A605BE /* SceneDelegate.swift */,
-				35E55B9B252453C100A605BE /* ViewController.swift */,
-				35E55B9D252453C100A605BE /* Main.storyboard */,
-				35E55BA3252453C100A605BE /* Assets.xcassets */,
+				35E55BD82524626700A605BE /* Model */,
+				35E55BD325245DAF00A605BE /* View */,
+				35E55BFD252499EB00A605BE /* ViewModel */,
+				35E55BD025245BF300A605BE /* ViewController */,
+				35E55C0D2524FBF700A605BE /* Resources */,
 				35E55BA5252453C100A605BE /* LaunchScreen.storyboard */,
 				35E55BA8252453C100A605BE /* Info.plist */,
-				35E55BA0252453C100A605BE /* MisterTasks.xcdatamodeld */,
 			);
 			path = MisterTasks;
 			sourceTree = "<group>";
@@ -148,9 +169,74 @@
 		35E55BCD2524548E00A605BE /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				35E55C0125249B4000A605BE /* CoreDataManager.swift */,
 				35E55BCE252454AE00A605BE /* NetworkManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		35E55BD025245BF300A605BE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35E55BD125245C3500A605BE /* UsersViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		35E55BD325245DAF00A605BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35E55BD425245DF500A605BE /* UserCollectionViewCell.swift */,
+				35E55BD525245DF500A605BE /* UserCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35E55BD82524626700A605BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35E55BE72524893900A605BE /* User.swift */,
+				35E55BE52524893900A605BE /* Tasks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35E55BFD252499EB00A605BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				35E55BFE25249A2200A605BE /* UserListViewModel.swift */,
+				35E55C032524D17F00A605BE /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		35E55C072524F54800A605BE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				35E55C082524F5B400A605BE /* Repository.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		35E55C0A2524FAA100A605BE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				35E55C0B2524FAC000A605BE /* CoreDataRepository.swift */,
+				35E55C1025250FFE00A605BE /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		35E55C0D2524FBF700A605BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35E55B97252453C100A605BE /* AppDelegate.swift */,
+				35E55B99252453C100A605BE /* SceneDelegate.swift */,
+				35E55B9D252453C100A605BE /* Main.storyboard */,
+				35E55BA3252453C100A605BE /* Assets.xcassets */,
+				35E55BA0252453C100A605BE /* MisterTasks.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E55BA7252453C100A605BE /* LaunchScreen.storyboard in Resources */,
+				35E55BD725245DF500A605BE /* UserCollectionViewCell.xib in Resources */,
 				35E55BA4252453C100A605BE /* Assets.xcassets in Resources */,
 				35E55B9F252453C100A605BE /* Main.storyboard in Resources */,
 			);
@@ -285,10 +372,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E55BCF252454AE00A605BE /* NetworkManager.swift in Sources */,
-				35E55B9C252453C100A605BE /* ViewController.swift in Sources */,
+				35E55BFF25249A2200A605BE /* UserListViewModel.swift in Sources */,
+				35E55BD225245C3500A605BE /* UsersViewController.swift in Sources */,
+				35E55C092524F5B400A605BE /* Repository.swift in Sources */,
 				35E55B98252453C100A605BE /* AppDelegate.swift in Sources */,
+				35E55C042524D17F00A605BE /* UserViewModel.swift in Sources */,
+				35E55C0C2524FAC000A605BE /* CoreDataRepository.swift in Sources */,
+				35E55C0225249B4000A605BE /* CoreDataManager.swift in Sources */,
+				35E55C1125250FFE00A605BE /* UserRepository.swift in Sources */,
 				35E55BCC2524540300A605BE /* Config.swift in Sources */,
+				35E55BEB2524893900A605BE /* User.swift in Sources */,
 				35E55BA2252453C100A605BE /* MisterTasks.xcdatamodeld in Sources */,
+				35E55BD625245DF500A605BE /* UserCollectionViewCell.swift in Sources */,
+				35E55BE92524893900A605BE /* Tasks.swift in Sources */,
 				35E55B9A252453C100A605BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
