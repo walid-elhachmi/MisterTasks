@@ -34,6 +34,8 @@
 		35E55C1B2525454A00A605BE /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C1A2525454A00A605BE /* TaskViewModel.swift */; };
 		35E55C1D2525458200A605BE /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C1C2525458200A605BE /* TaskListViewModel.swift */; };
 		35E55C1F2525C2EA00A605BE /* TasksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C1E2525C2EA00A605BE /* TasksRepository.swift */; };
+		35E55C2225260EBC00A605BE /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C2125260EBC00A605BE /* UIColor+Random.swift */; };
+		35E55C2425260EF700A605BE /* CGFloat+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E55C2325260EF700A605BE /* CGFloat+Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		35E55C1A2525454A00A605BE /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		35E55C1C2525458200A605BE /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		35E55C1E2525C2EA00A605BE /* TasksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRepository.swift; sourceTree = "<group>"; };
+		35E55C2125260EBC00A605BE /* UIColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
+		35E55C2325260EF700A605BE /* CGFloat+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Random.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		35E55B96252453C100A605BE /* MisterTasks */ = {
 			isa = PBXGroup;
 			children = (
+				35E55C2025260E9E00A605BE /* Extension */,
 				35E55BCA252453EF00A605BE /* Config */,
 				35E55C072524F54800A605BE /* Protocol */,
 				35E55C0A2524FAA100A605BE /* Repository */,
@@ -271,6 +276,15 @@
 				35E55C172525442C00A605BE /* TasksTableViewCell.xib */,
 			);
 			path = TasksTableViewCell;
+			sourceTree = "<group>";
+		};
+		35E55C2025260E9E00A605BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				35E55C2125260EBC00A605BE /* UIColor+Random.swift */,
+				35E55C2325260EF700A605BE /* CGFloat+Random.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +430,7 @@
 				35E55C042524D17F00A605BE /* UserViewModel.swift in Sources */,
 				35E55C1B2525454A00A605BE /* TaskViewModel.swift in Sources */,
 				35E55C0C2524FAC000A605BE /* CoreDataRepository.swift in Sources */,
+				35E55C2225260EBC00A605BE /* UIColor+Random.swift in Sources */,
 				35E55C0225249B4000A605BE /* CoreDataManager.swift in Sources */,
 				35E55C1125250FFE00A605BE /* UserRepository.swift in Sources */,
 				35E55C13252543B000A605BE /* TasksViewController.swift in Sources */,
@@ -426,6 +441,7 @@
 				35E55BE92524893900A605BE /* Tasks.swift in Sources */,
 				35E55C1F2525C2EA00A605BE /* TasksRepository.swift in Sources */,
 				35E55B9A252453C100A605BE /* SceneDelegate.swift in Sources */,
+				35E55C2425260EF700A605BE /* CGFloat+Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

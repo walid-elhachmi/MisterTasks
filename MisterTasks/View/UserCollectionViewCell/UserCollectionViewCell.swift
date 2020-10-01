@@ -46,6 +46,7 @@ class UserCollectionViewCell: UICollectionViewCell {
         self.usernameLabel.text = userViewModel.username
         self.emailLabel.text = userViewModel.email
         self.phoneLabel.text = userViewModel.phone
+        self.userPicture.tintColor = UIColor.random()
     }
     
     @IBAction func showTasks(_ sender: Any) {
