@@ -25,7 +25,7 @@ class UsersViewController: UIViewController {
         usersCollectionView.delegate = self
         usersCollectionView.dataSource = self
         
-        usersCollectionView.register(UINib.init(nibName: userCellNibName, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        usersCollectionView.register(UINib(nibName: userCellNibName, bundle: nil), forCellWithReuseIdentifier: reuseIdentifierUserCell)
 
     }
     
@@ -50,7 +50,7 @@ extension UsersViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! UserCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierUserCell, for: indexPath) as! UserCollectionViewCell
         
         let userViewModel = self.userListViewModel.user(atIndex: indexPath.row)
         cell.delegate = self
@@ -64,7 +64,7 @@ extension UsersViewController: UICollectionViewDataSource {
 }
 
 extension UsersViewController: UserListViewModelDelegate {
-    func parseUsersSuccess() {
+    func fetchUsersSuccess() {
         DispatchQueue.main.async {
             self.usersCollectionView.reloadData()
         }
@@ -75,7 +75,10 @@ extension UsersViewController: UserListViewModelDelegate {
 extension UsersViewController: UserCollectionViewCellDelegate {
     
     func didTapShowUserTasks(by id: Int32) {
-        print(id)
+        let taskVC : TasksViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TasksViewController") as! TasksViewController
+        
+        taskVC.user = self.userListViewModel.fetchUser(by: id)
+        self.present(taskVC, animated: true, completion: nil)
     }
     
     

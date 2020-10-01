@@ -9,7 +9,7 @@
 import UIKit
 
 let userCellNibName = "UserCollectionViewCell"
-let reuseIdentifier = "UserCollectionViewCell"
+let reuseIdentifierUserCell = "UserCollectionViewCell"
 
 protocol UserCollectionViewCellDelegate: AnyObject {
     

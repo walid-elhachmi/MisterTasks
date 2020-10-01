@@ -12,6 +12,7 @@ import CoreData
 protocol UserInterfaceRepository {
     
     func getAllUser() -> Result<[User], Error>
+    func getUser(by id: Int32) -> Result<User, Error>
     func addUser(userDTO: UserDTO) -> Result<Bool, Error>
 }
 
@@ -32,6 +33,22 @@ class UserRepository: UserInterfaceRepository {
         let result = repository.getAll(predicate: nil, sortDescriptors: sortById)
         switch result {
         case .success(let user):
+            return .success(user)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
+    @discardableResult func getUser(by id: Int32) -> Result<User, Error> {
+        
+        let sortById = [NSSortDescriptor(key: "id", ascending: true)]
+        let predicate = NSPredicate(format: "id == %d", id)
+        let result = repository.getAll(predicate: predicate, sortDescriptors: sortById)
+        switch result {
+        case .success(let users):
+            guard let user = users.first else {
+                return .failure(CoreDataError.objectNotFound)
+            }
             return .success(user)
         case .failure(let error):
             return .failure(error)

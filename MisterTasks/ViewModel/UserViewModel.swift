@@ -9,7 +9,9 @@
 import Foundation
 
 class UserViewModel: NSObject {
+    
     private var user: User
+    
     init(_ user: User) {
         self.user = user
     }

@@ -33,8 +33,7 @@ struct TasksDTO: Codable {
     var id: Int32
     var userId: Int32
     var title: String?
-    var completed: String?
-    var owner: String?
+    var completed: Bool = false
     
     enum CodingKeys: String, CodingKey {
         
@@ -42,6 +41,5 @@ struct TasksDTO: Codable {
         case userId
         case title
         case completed
-        case owner
     }
 }

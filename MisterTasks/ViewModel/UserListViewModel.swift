@@ -10,27 +10,27 @@ import Foundation
 
 
 protocol UserListViewModelDelegate: NSObject {
-    func parseUsersSuccess()
+    func fetchUsersSuccess()
 }
 
 class UserListViewModel: NSObject {
     
+    weak var delegate: UserListViewModelDelegate?
 
     private var usersRepository = UserRepository(context: CoreDataManager.shared.managedObjectContext())
     
     private var users: Array<User> {
+        
         didSet {
-            self.delegate?.parseUsersSuccess()
+            self.delegate?.fetchUsersSuccess()
         }
     }
     
-    weak var delegate: UserListViewModelDelegate?
-    
     init(_ delegate: UserListViewModelDelegate?) {
+        
         self.delegate = delegate
         self.users = Array<User>()
     }
-    
     
     func fetchUsers() {
     
@@ -38,22 +38,23 @@ class UserListViewModel: NSObject {
             (result: Result<[UserDTO], APIError>) in
         
             switch result {
-                case .success(let result):
+                case .success(let users):
                     CoreDataManager.shared.clearStorage(forEntity: "User")
-                    let _ = result.map { userDTO -> Void  in
+                    let _ = users.map { userDTO -> Void  in
                         self?.usersRepository.addUser(userDTO: userDTO)
                     }
                     CoreDataManager.shared.saveContext()
-                    self?.fetchAllUsersFromDB()
                 case .failure(let error):
                     print(error)
             }
-            
         }
+        
+        self.fetchAllUsersFromDB()
         
     }
     
     func fetchAllUsersFromDB() {
+        
         let result = self.usersRepository.getAllUser()
         
         switch result {
@@ -63,6 +64,20 @@ class UserListViewModel: NSObject {
                 print(error)
         }
     }
+    
+    func fetchUser(by id: Int32) -> User {
+        
+        let result = self.usersRepository.getUser(by: id)
+        
+        switch result {
+            case .success(let user):
+                return user
+            case .failure(let error):
+                print(error)
+                return User()
+        }
+    }
+    
     
     func user(atIndex index: Int) -> UserViewModel {
         return UserViewModel(self.users[index])

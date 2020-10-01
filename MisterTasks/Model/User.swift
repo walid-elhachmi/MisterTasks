@@ -69,5 +69,4 @@ struct UserDTO: Codable {
         case website
         case task
     }
-    
 }

@@ -16,7 +16,7 @@ public enum API {
     enum EndPoint {
         
         static let users = "users/"
-        static let tasks = ""
+        static let tasks = "todos?userId"
     }
     
 }
@@ -34,4 +34,5 @@ public enum APIError: Error {
 public enum CoreDataError: Error {
     
     case invalidManagedObjectType
+    case objectNotFound
 }
