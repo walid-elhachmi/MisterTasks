@@ -11,6 +11,7 @@ import UIKit
 class TasksViewController: UIViewController {
     
     @IBOutlet weak var tasksTableView: UITableView!
+    let activityView = UIActivityIndicatorView(style: .medium)
     
     var taskListViewModel: TaskListViewModel!
     
@@ -18,14 +19,16 @@ class TasksViewController: UIViewController {
         didSet {
             self.taskListViewModel = TaskListViewModel(self)
             self.taskListViewModel.fetchTasksByUser(user: self.user ?? User())
+
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        self.title = "List des tâches".uppercased()
+        activityView.center = self.view.center
+        activityView.startAnimating()
+        self.view.addSubview(activityView)
         
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
@@ -62,8 +65,18 @@ extension TasksViewController: UITableViewDataSource {
 
 extension TasksViewController: TaskListViewModelDelegate {
     
+    func fetchTasksFaileur() {
+        
+        self.taskListViewModel.fetchTasksByUserSorted(user: self.user ?? User())
+    }
+    
+    
     func fetchTasksSuccess() {
+
         DispatchQueue.main.async {
+            
+            self.activityView.stopAnimating()
+            self.activityView.removeFromSuperview()
             self.tasksTableView.reloadData()
         }
     }

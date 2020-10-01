@@ -11,6 +11,7 @@ import Foundation
 
 protocol UserListViewModelDelegate: NSObject {
     func fetchUsersSuccess()
+    func fetchUsersFaileur()
 }
 
 class UserListViewModel: NSObject {
@@ -44,12 +45,14 @@ class UserListViewModel: NSObject {
                         self?.usersRepository.addUser(userDTO: userDTO)
                     }
                     CoreDataManager.shared.saveContext()
+                    self?.fetchAllUsersFromDB()
                 case .failure(let error):
+                    self?.delegate?.fetchUsersFaileur()
                     print(error)
             }
         }
         
-        self.fetchAllUsersFromDB()
+        
         
     }
     

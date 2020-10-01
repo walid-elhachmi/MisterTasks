@@ -10,6 +10,7 @@ import Foundation
 
 protocol TaskListViewModelDelegate: NSObject {
     func fetchTasksSuccess()
+    func fetchTasksFaileur()
 }
 
 class TaskListViewModel: NSObject {
@@ -33,33 +34,40 @@ class TaskListViewModel: NSObject {
     
     func fetchTasksByUser(user: User) {
 
-        NetworkManager.shared.request(url: "\(API.EndPoint.tasks)=\(user.id)") {
+        NetworkManager.shared.request(url: "\(API.EndPoint.tasks)=\(user.id)") { [weak self]
             (result: Result<[TasksDTO], APIError>) in
         
             switch result {
                 case .success(let tasks):
                     let _ = tasks.map { taskDTO -> Void  in
-                        self.tasksRepository.addTaskToUser(user: user, tasksDTO: taskDTO)
+                        self?.tasksRepository.addTaskToUser(user: user, tasksDTO: taskDTO)
                     }
                     CoreDataManager.shared.saveContext()
+                    self?.fetchTasksByUserSorted(user: user)
                 print(result)
                 case .failure(let error):
+                    self?.delegate?.fetchTasksFaileur()
                     print(error)
             }
                     
         }
         
-        self.tasks = user.tasks?.allObjects as! Array<Tasks>
+    }
+    
+    func fetchTasksByUserSorted(user: User) {
         
+        let tasksByUser = user.tasks?.allObjects as! Array<Tasks>
+        self.tasks = tasksByUser.sorted(by: { $0.id > $1.id })
     }
     
     
-    
     func task(atIndex index: Int) -> TaskViewModel {
+        
         return TaskViewModel(self.tasks[index])
     }
     
     func tasksCount() -> Int {
+        
         return tasks.count
     }
     

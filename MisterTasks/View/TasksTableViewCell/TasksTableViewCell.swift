@@ -14,6 +14,7 @@ let reuseIdentifierTaskCell = "TasksTableViewCell"
 class TasksTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var statusIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +28,9 @@ class TasksTableViewCell: UITableViewCell {
     }
     
     func configure(_ userViewModel: TaskViewModel) {
-           self.titleLabel.text = userViewModel.title
-       }
+        self.titleLabel.text = userViewModel.title
+        self.statusIcon.image = userViewModel.completed ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "multiply.circle.fill")
+        self.statusIcon.tintColor = userViewModel.completed ? .green : .red
+    }
     
 }
