@@ -73,7 +73,7 @@ extension TasksViewController: TaskListViewModelDelegate {
     
     func fetchTasksSuccess() {
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             
             self.activityView.stopAnimating()
             self.activityView.removeFromSuperview()

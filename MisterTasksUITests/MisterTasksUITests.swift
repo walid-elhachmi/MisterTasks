@@ -34,10 +34,9 @@ class MisterTasksUITests: XCTestCase {
     }
     
     func test_user_experience_of_getting_data_from_local_database() {
-         
+        
         app.alerts["Probléme de connexion"].scrollViews.otherElements.buttons["OUI"].tap()
         app.collectionViews.children(matching: .cell).element(boundBy: 0).buttons["Ses Tâches"].tap()
-        
         app.tables.children(matching: .cell).element(boundBy: 0).swipeLeft()
 
                 

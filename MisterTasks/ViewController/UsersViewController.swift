@@ -78,7 +78,8 @@ extension UsersViewController: UserListViewModelDelegate {
     
     func fetchUsersFaileur() {
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
+            
             let alertController = UIAlertController(title: "Probléme de connexion", message: "Voulez vous continuer par les données local", preferredStyle: .alert)
 
             let okAction = UIAlertAction(title: "OUI", style: .default) {
@@ -100,7 +101,8 @@ extension UsersViewController: UserListViewModelDelegate {
     
     func fetchUsersSuccess() {
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
+            
             self.usersCollectionView.reloadData()
         }
     }
